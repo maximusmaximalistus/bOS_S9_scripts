@@ -1,0 +1,10 @@
+*/1 * * * * /usr/sbin/logrotate /etc/logrotate.conf 2>&1 | logger -t logrotate
+
+# Enable one hashboard
+00 9 * * *  sh /root/one_hashboard.sh
+
+# Enable two hashboards
+30 22 * * 1-5 sh /root/two_hashboard.sh
+
+# Time check script
+*/30 9-21 * * * sh /root/check_time.sh 
